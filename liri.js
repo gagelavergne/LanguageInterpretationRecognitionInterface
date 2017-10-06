@@ -1,4 +1,3 @@
-//pulling from keys.js
 var keys = require('./keys.js');
 var twitter = require('twitter');
 var Spotify = require('node-spotify-api');
@@ -8,12 +7,7 @@ var spotify = new Spotify({
   secret: '2ab34597f7e4477faa7a5e671015c67b',
 });
 
-
-
-
-
-
-//------------------------------
+//-------------TWEETS-----------------
 
 function myTweets() {
 	var twitterUsername = process.argv[3];
@@ -29,19 +23,13 @@ function myTweets() {
   		console.log(data[i].text);
   		console.log("Created At: " + date.substring(0, 19));
   			}
- 		}
+ 		 }
 	});
 }
 
 myTweets();
 
-
-
-
-
 //________ MOVIE __________
-
-
 
 function getMovie(){
 var userMovie = "http://www.omdbapi.com/?t=Mr.Nobody&y=&plot=short&tomatoes=true&r=json&apikey=40e9cece";
@@ -66,22 +54,15 @@ getMovie();
 
 //_________SPOTIFY________
 
-// spotify
-//   .search({ type: 'track', query: 'The Sign' })
-//   .then(function(response) {
-//     console.log(response);
-//   })
-
 spotify.search({ type: 'track', query: 'The Sign' }, function(err, data) {
   if (err) {
     return console.log('Error occurred: ' + err);
   }
-  //console.log("Artist Name: ", data.track.items[0].name);
+ 
 var tracks = data.tracks.items;
 
 tracks.map(function(track){
   track.artists.map(function(artist){
-    //console.log("Artist Name: ", artist.name);
 
  if (artist.name == "Ace of Base", track.name == "The Sign") {
     console.log(artist.name);
@@ -90,12 +71,9 @@ tracks.map(function(track){
     console.log("--------------");
     console.log("Album Name: ",track.album.name);
 
- }
-   })
-  // console.log("Song Name: ",track.name);
-  // console.log("Album Name: ", track.album.name)
-  // console.log("------------------------")
-})
+         }
+      })
+    })
 
 });
 

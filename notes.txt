@@ -1,21 +1,17 @@
 npm init --->
+
 	- Creates Package.Json for the entire project
+
 	- Allows to use other npm apis -> by reaching out to other package.json (require // exports);
-
-
 
 
 twitter:
 
 npm install <npm api's>
+
 npmjs.com search twitter
 
 in keys.js add your twitter api stuff
-
-
-
-
-
 
 
 movie:
