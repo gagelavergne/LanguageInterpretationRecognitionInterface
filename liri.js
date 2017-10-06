@@ -66,13 +66,38 @@ getMovie();
 
 //_________SPOTIFY________
 
-spotify
-  .search({ type: 'track', query: 'The Sign' })
-  .then(function(response) {
-    console.log(response);
-  })
+// spotify
+//   .search({ type: 'track', query: 'The Sign' })
+//   .then(function(response) {
+//     console.log(response);
+//   })
 
+spotify.search({ type: 'track', query: 'The Sign' }, function(err, data) {
+  if (err) {
+    return console.log('Error occurred: ' + err);
+  }
+  //console.log("Artist Name: ", data.track.items[0].name);
+var tracks = data.tracks.items;
 
+tracks.map(function(track){
+  track.artists.map(function(artist){
+    //console.log("Artist Name: ", artist.name);
+
+ if (artist.name == "Ace of Base", track.name == "The Sign") {
+    console.log(artist.name);
+    console.log("--------------");
+    console.log("Song Name: ",track.name);
+    console.log("--------------");
+    console.log("Album Name: ",track.album.name);
+
+ }
+   })
+  // console.log("Song Name: ",track.name);
+  // console.log("Album Name: ", track.album.name)
+  // console.log("------------------------")
+})
+
+});
 
 
 

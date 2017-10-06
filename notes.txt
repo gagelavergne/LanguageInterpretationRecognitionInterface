@@ -23,3 +23,5 @@ movie:
 npm install omdb
 
 npm install omdb -- save
+
+JSON.parse(what you want to parse) ---> makes it neat and stacks in a row
